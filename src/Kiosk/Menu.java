@@ -8,14 +8,7 @@ public class Menu {
     private int menuPrice;
     private int count;
 
-    public Menu(int menuID, String menuName, String menuDescription, int menuPrice, int count, String menuImage) {
-        this.menuID = menuID;
-        this.menuName = menuName;
-        this.menuDescription = menuDescription;
-        this.menuPrice = menuPrice;
-        this.menuImage = menuImage;
-        this.count = count;
-    }
+
 
     //Getters and Setters
     public int getMenuID() {
