@@ -15,7 +15,7 @@ public class DAO {
     private static final String DRIVER = "com.mysql.cj.jdbc.Driver";
     private static final String URL = "jdbc:mysql://localhost:3306/kiosk?serverTimezone=UTC";
     private static final String ID = "아이디";
-    private static final String PW = "비밀번호";
+    private static final String PW = "패스워드";
     public List<Menu> GetMenu(){
         //메뉴 가져오기
         List<Menu> menuList = new ArrayList<Menu>();
@@ -38,6 +38,7 @@ public class DAO {
                 menu.setMenuID(rs.getInt("ID"));
                 menu.setMenuName(rs.getString("Name"));
                 menu.setMenuDescription(rs.getString("Description"));
+                menu.setMenuType(rs.getInt("Type"));
                 menu.setMenuPrice(rs.getInt("Price"));
                 menu.setCount(rs.getInt("Count"));
                 menu.setMenuImage(rs.getString("Image"));

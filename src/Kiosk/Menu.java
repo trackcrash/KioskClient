@@ -5,6 +5,7 @@ public class Menu {
     private String menuName;
     private String menuDescription;
     private String menuImage;
+    private int menuType;
     private int menuPrice;
     private int count;
 
@@ -57,6 +58,14 @@ public class Menu {
 
     public void setMenuImage(String menuImage) {
         this.menuImage = menuImage;
+    }
+
+    public int getMenuType() {
+        return menuType;
+    }
+
+    public void setMenuType(int menuType) {
+        this.menuType = menuType;
     }
 
 }

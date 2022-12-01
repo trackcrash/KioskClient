@@ -2,6 +2,7 @@ package GUi;
 
 import Kiosk.DAO;
 import Kiosk.Menu;
+import Kiosk.SocketClient;
 
 import javax.swing.*;
 import java.awt.*;
@@ -24,7 +25,6 @@ public class UserGui extends JFrame {
         setLocationRelativeTo(null);
         MenuPanel();
         setVisible(true);
-
     }
     void MenuPanel(){
         MenuPanel = new JPanel();
@@ -164,7 +164,14 @@ public class UserGui extends JFrame {
         button.setForeground(Color.BLACK);
         button.setBackground(Color.WHITE);
         button.addActionListener(e -> {
+            SocketClient socketClient = new SocketClient();
+            socketClient.SendMenu(selectMenu, totalPrice,BottomPanel);
             System.out.println(totalPrice);
+            totalPrice = 0;
+            UpdateTotalPrice();
+            BottomPanel.add(button);
+            BottomPanel.revalidate();
+            BottomPanel.repaint();
         });
         BottomPanel.add(button);
         add(BottomPanel, BorderLayout.SOUTH);
@@ -184,6 +191,7 @@ public class UserGui extends JFrame {
         //addTotalPrice
         UpdateTotalPrice();
     }
+
 
     public static void main(String[] args) {
         new UserGui();
