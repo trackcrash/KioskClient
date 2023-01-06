@@ -14,8 +14,8 @@ public class DAO {
     //Sql
     private static final String DRIVER = "com.mysql.cj.jdbc.Driver";
     private static final String URL = "jdbc:mysql://localhost:3306/kiosk?serverTimezone=UTC";
-    private static final String ID = "아이디";
-    private static final String PW = "패스워드";
+    private static final String ID = "root";
+    private static final String PW = "root";
     public List<Menu> GetMenu(){
         //메뉴 가져오기
         List<Menu> menuList = new ArrayList<Menu>();
